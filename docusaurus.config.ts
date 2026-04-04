@@ -4,6 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 import tailwind from "tailwindcss";
 import autoprefixer from "autoprefixer";
 
+
 const config: Config = {
   title: "OpenTofu",
   url: "https://opentofu.org",
@@ -147,7 +148,7 @@ const config: Config = {
           },
           routeBasePath: "/docs",
           editUrl: ({ version, docPath }) => {
-            const branch = version == "current" ? "main" : version;
+            const branch = version == "current" ? "v1.11" : version;
 
             return `https://github.com/opentofu/opentofu/edit/${branch}/website/docs/${docPath}`;
           },
@@ -219,7 +220,7 @@ const config: Config = {
     announcementBar: {
       id: "opentofu-1-11-ga",
       content:
-        '<a href="/blog/opentofu-1-11-0/" class="announcement-bar-link"><div class="announcement-bar-content">🎉 OpenTofu 1.11.0 has arrived! <span class="announcement-arrow">→</span></div></a>',
+      '<a href="/blog/opentofu-1-11-0/" class="announcement-bar-link"><div class="announcement-bar-content">🎉 OpenTofu 1.11.0 has arrived! <span class="announcement-arrow">→</span></div></a>',
       backgroundColor: "#00000000",
       isCloseable: false,
     },
@@ -347,15 +348,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.oneLight,
       darkTheme: prismThemes.oneDark,
-      additionalLanguages: [
-        "hcl",
-        "powershell",
-        "bash",
-        "json",
-        "diff",
-        "docker",
-        "shell-session",
-      ],
+      additionalLanguages: ["hcl", "powershell", "bash", "json", "diff", "docker", "shell-session"],
     },
     image: "/img/og.png",
   } satisfies Preset.ThemeConfig,
